@@ -8,21 +8,345 @@ $blue = #009ade
 $pink = #ec0080
 $yellow = #ffea00
 $gray = #4c4c4c
+$grayText = #c6c6c6
 $black = #000
 $white = #fff
+
+// Mixins
+.flex
+  display flex
+  align-items center
+
+cn_logo =
+  background url('../imgs/cn_logo.png')
+  background-repeat no-repeat
+  background-position center
+  background-size cover
+  text-indent -9999px
+
+opacity =
+  background-color: $black
+  opacity: 1
+
+transition =
+  transition: 0.2s all linear;
+
+transform =
+  transform: scale(1.1);
+
+.gridBoxes
+  display: inline-block
+  width: 3.5em
+  height 3.5em
+  margin 0.025em
+  margin-top: 0.18em
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.5em
+  padding-top 1.25em
+  color: $white
+  opacity: 0.7
+  cursor pointer
+  {transition}
 
 // Styles
 body
   background-color $white
   color $black
   font-family 'CNLatin', sans-serif
-  font-size 2em
+  font-size 1em
+  height 100%
+  min-width 100%
+
+a
+  text-decoration none
+  color inherit
+
+ul, li
+  text-decoration: none
+  list-style-type: none
+
+input
+  border none
+  outline 0
+
+// Header
+.header
+  background-color $black
+  color $white
+
+  &__upbar
+    @extends .flex
+    justify-content space-between
+    flex-flow: wrap
+    //padding: 0 12em
+    padding 0 15%
+
+  &__timebar
+    text-align right
+    margin-left 8.5em
+
+  &__time
+    font-size 2em
+
+  &__program
+    text-transform uppercase
+    font-size: 0.6em
+    width 10em
+    margin-right 2.5em
+
+  &__program-more
+    display: inline-block
+    background: $yellow
+    color: $black
+    text-align: center
+    font-size: 1.2em
+    line-height: 1.2em
+    font-weight: bold
+    height: 1em
+    width: 1em
+    position: relative;
+    top: -1em
+
+  &__ad
+    @extends .flex
+    justify-content flex-end
+
+  &__ad-link
+    width 602px
+    height 72px
+    border 1px solid $gray
+
+  &__ad-title
+    display block
+    font-size 0.7em
+    transform rotate(-90deg)
+    margin-left -2.25em
+
+  &__titlebar
+    @extends .flex
+    justify-content space-between
+    background-color $gray
+    //padding 0.5em 15em
+    padding 0.5em 18%
+    height 1.8em
+
+  &__title
+    {cn_logo}
+    height 2.7em
+    width 4.4em
+
+  &__search
+    font-family 'Whitney', sans-serif
+    font-weight: bold
+    background-color $black
+    color $white
+    text-align center
+    text-transform: uppercase
+    font-size: 0.6em
+    line-height: 1.4em
+    padding: 0.6em
+    width 22em
 
 
-h1
-  text-transform uppercase
+// Main
+.schedule
+  padding 0 18.4%
+  @extends .flex
+  flex-wrap: wrap;
+  flex-direction: column;
+  width 100%
 
-h2
-  font-family 'Whitney', sans-serif
-  font-weight 100
-  font-size 1.5em
+  &__title
+    flex-grow: 1
+    min-width: 100%
+    background-color: $blue
+    color: $white
+    margin-top: 0.6em
+    border-top:5px solid $yellow
+    font-size: 2em
+    margin-bottom: 0.5em
+
+  &__day
+    padding 0.4em
+
+  &__row
+    @extends .flex
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-bottom 0.5em
+
+  &__list
+    margin 0
+    padding: 0
+    max-width 65%
+    padding-left 1.5em
+    margin-bottom: 1em
+
+  &__hour
+    @extends .gridBoxes
+    background-color: $blue
+
+    &:hover
+      color: $blue
+      {opacity}
+      {transform}
+
+    &--pink
+      @extends .gridBoxes
+      background-color: $pink
+
+      &:hover
+        color: $pink
+        {opacity}
+        {transform}
+
+    &--yellow
+      @extends .gridBoxes
+      background-color: $yellow
+
+      &:hover
+        color: $yellow
+        {opacity}
+        {transform}
+
+    &--arrow
+      @extends .gridBoxes
+      background-color: $white
+      padding-top: 0.8em
+
+      &:hover
+        color: $black
+        opacity: 1
+        {transform}
+
+  &__byHour
+    background-color: $yellow
+    color: $white
+    width: 31%
+    text-align: center
+    margin-right 1em
+
+  &__selected-hour
+    display: block
+    font-size: 3.5em
+    margin: 0.3em
+
+  &__timeslot
+    @extends .flex
+    justify-content: space-between
+    flex-flow: no-wrap
+    background-color: $white
+    color $black
+    margin 0.5em
+    height 5em
+    cursor: pointer
+    {transition}
+
+    &:hover
+      opacity 0.9
+      {transform}
+      {transition}
+
+  &__quarter
+    display: inline-block
+    color: $gray
+    transform rotate(-90deg)
+    font-size: 1.8em
+    margin-left -0.45em
+    margin-right: 0.45em
+
+  &__showImage
+    max-width: 100%
+
+  &__showName
+    font-family: 'Whitney', sans-serif
+    font-weight: bold
+    text-align: left
+    margin: 0 0.45em 0 1.2em
+
+  &__byShow
+    width: 100%
+    height: 8em
+    background-color $pink
+    color $white
+    border-bottom 1em solid $blue
+    //margin-bottom: 1em
+
+  &__shows
+    @extends .flex
+    justify-content: space-around
+    margin-top: -1em
+
+  &__show
+    border: 1px solid transparent
+
+    &:hover
+      {transition}
+      {transform}
+
+  &__prev
+  &__next
+    cursor pointer
+    fill $white
+    {transition}
+
+    &:hover
+      fill $black
+
+  &__line
+    width: 100%
+    height 0.3em
+    background-color: $yellow
+    //margin-top: -1em
+    z-index -1
+
+// Footer
+.footer
+  font-size 0.8em
+  width 100%
+  overflow hidden
+
+  &__description
+    @extends .flex
+    justify-content space-around
+    background-color $gray
+    color $white
+    font-family 'Whitney', sans-serif
+    //padding 1.2em 20em
+    padding 1.2em 18%
+
+  &__logo
+    {cn_logo}
+    height 4em
+    width: 8em
+    display block
+    margin-right 2em
+
+  &__text
+    color $grayText
+    font-size 1em
+    font-weight bold
+    text-align center
+
+  &__links
+    display inline-block
+    background-color $black
+    color $white
+    text-align center
+    //padding 0.3em 21em
+    width 100%
+    padding 0.3em 18%
+
+  &__link
+    color $white
+    text-decoration none
+    text-transform uppercase
+    line-height 1.5em
+    display inline
+    padding 3em 1.5em
+    white-space nowrap
+
+    & a:hover
+      text-decoration underline

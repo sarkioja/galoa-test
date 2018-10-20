@@ -10,104 +10,154 @@
 </head>
 <body>
 
-  <header>
-      <div>
-        <time>14:00</time>
-        <p>O Incrível Mundo de Gumball</p>
+  <header class="header">
+      <div class="header__upbar">
+        <div class="header__timebar">
+          <time class="header__time">14:00</time>
+          <p class="header__program">O Incrível Mundo de Gumball</p>
+          <span class="header__program-more"><a href="#">+</a></span>
+        </div>
 
-        <div>
-          <a href="#"><img src="https://via.placeholder.com/500x85/fff/000/?text=Publicidade"></a>
-          <span>Publicidade</span>
+        <div class="header__ad">
+          <a class="header__ad-link" href="#">
+            <img src="https://via.placeholder.com/600x68/ccc/000/?text=Publicidade">
+          </a>
+          <span class="header__ad-title">Publicidade</span>
         </div>
       </div>
 
-      <div>
-        <h1>Cartoon Network</h1>
-        <input type="text" placeholder="Procurar">
+      <div class="header__titlebar">
+        <h1 class="header__title">Cartoon Network</h1>
+        <input class="header__search" type="text" placeholder="Procurar">
       </div>
   </header>
 
-  <main>
-    <div>
-      <h1>SEGUNDA 18</h1>
+  <main class="schedule">
+    <div class="schedule__title">
+      <h1 class="schedule__day">SEGUNDA 18</h1>
     </div>
 
-    <div>
-      <ul>
-        <li>00h</li>
-        <li>01h</li>
-        <li>02h</li>
-        <li>03h</li>
-        <li>04h</li>
-        <li>05h</li>
-        <li>06h</li>
-        <li>07h</li>
-        <li>08h</li>
-        <li>09h</li>
-        <li>10h</li>
-        <li>11h</li>
-        <li>12h</li>
-        <li>13h</li>
-        <li>14h</li>
-        <li>15h</li>
-        <li>16h</li>
-        <li>17h</li>
-        <li>18h</li>
-        <li>19h</li>
-        <li>20h</li>
-        <li>21h</li>
-        <li>22h</li>
-        <li>23h</li>
+    <div class="schedule__row">
+      <div class="schedule__list">
+        <ul class="schedule__hours">
+          <li class="schedule__hour">00h</li>
+          <li class="schedule__hour--pink">01h</li>
+          <li class="schedule__hour--yellow">02h</li>
+          <li class="schedule__hour">03h</li>
+          <li class="schedule__hour--pink">04h</li>
+          <li class="schedule__hour--yellow">05h</li>
+          <li class="schedule__hour">06h</li>
+          <li class="schedule__hour--pink">07h</li>
+          <li class="schedule__hour--yellow">08h</li>
+          <li class="schedule__hour">09h</li>
+          <li class="schedule__hour--pink">10h</li>
+          <li class="schedule__hour--yellow">11h</li>
+          <li class="schedule__hour">12h</li>
+          <li class="schedule__hour--pink">13h</li>
+          <li class="schedule__hour--yellow">14h</li>
+          <li class="schedule__hour">15h</li>
+          <li class="schedule__hour--pink">16h</li>
+          <li class="schedule__hour--yellow">17h</li>
+          <li class="schedule__hour">18h</li>
+          <li class="schedule__hour--pink">19h</li>
+          <li class="schedule__hour--yellow">20h</li>
+          <li class="schedule__hour">21h</li>
+          <li class="schedule__hour--pink">22h</li>
+          <li class="schedule__hour--yellow">23h</li>
+          <li class="schedule__hour--arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#4c4c4c" viewBox="0 0 24 24"><path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"/></svg>
+          </li>
+        </ul>
+
+      </div>
+
+      <aside class="schedule__byHour">
+        <time class="schedule__selected-hour">23h</time>
+
+        <div class="schedule__timeslot">
+          <time class="schedule__quarter">23:00</time>
+          <img class="schedule__showImage" src="assets/imgs/regular-show_small.png" alt="Apenas Um Show">
+          <p class="schedule__showName">Apenas Um Show</p>
+        </div>
+
+        <div class="schedule__timeslot">
+          <time class="schedule__quarter">23:15</time>
+          <img src="assets/imgs/regular-show_small.png" alt="Apenas Um Show">
+          <p class="schedule__showName">Apenas Um Show</p>
+        </div>
+
+        <div class="schedule__timeslot">
+          <time class="schedule__quarter">23:30</time>
+          <img src="assets/imgs/clarence_small.png" alt="Clarêncio, O Otimista">
+          <p class="schedule__showName">Clarêncio, O Otimista</p>
+        </div>
+
+        <div class="schedule__timeslot">
+          <time class="schedule__quarter">23:45</time>
+          <img src="assets/imgs/clarence_small.png" alt="Clarêncio, O Otimista">
+          <p class="schedule__showName">Clarêncio, O Otimista</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="schedule__byShow">
+      <ul class="schedule__shows">
+        <li>
+          <i>
+            <svg class="schedule__prev" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>
+          </i>
+        </li>
+        <li class="schedule__show">
+          <a href="#">
+          <img src="assets/imgs/jorel.png" alt="O irmão do Jorel">
+          </a>
+        </li>
+        <li class="schedule__show">
+          <a href="#">
+          <img src="assets/imgs/gumball.png" alt="Gumball">
+          </a>
+        </li>
+        <li class="schedule__show">
+          <a href="#">
+            <img src="assets/imgs/jake.png" alt="Hora da Aventura">
+          </a>
+        </li>
+        <li class="schedule__show">
+          <a href="#">
+            <img src="assets/imgs/steven.png" alt="Steven Universo">
+          </a>
+        </li>
+        <li class="schedule__show">
+          <a href="#">
+            <img src="assets/imgs/rigby.png" alt="Apenas um Show">
+          </a>
+        </li>
+        <li>
+          <i>
+            <svg class="schedule__next" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"/></svg>
+          </i>
+        </li>
       </ul>
-
     </div>
+    <div class="schedule__line"></div>
 
-    <div>
-      <h2><time>23h</time>
-
-      <aside>
-        <time>23:00</time>
-        <img src="#" alt="">
-        <p>Apenas Um Show</p>
-      </div>
-
-      <div>
-        <time>23:15</time>
-        <img src="#" alt="">
-        <p>Apenas Um Show</p>
-      </div>
-
-      <div>
-        <time>23:30</time>
-        <img src="#" alt="">
-        <p>Clarêncio, O Otimista</p>
-      </div>
-
-      <div>
-        <time>23:45</time>
-        <img src="#" alt="">
-        <p>Clarêncio, O Otimista</p>
-      </div>
-    </aside>
-
-    <div>
-
-    </div>
   </main>
 
-  <footer>
-    <div>
-      <span>Logo</span>
-      <p>Jogos e vídeos grátis de Ben 10, Hora da Aventura com Finn e Jake, Apenas um Show, A Turma da Mônica, O Incrível Mundo de Gumball, Steven Universo, Titio Avô, Toonix e muito mais!</p>
+  <footer class="footer">
+
+    <div class="footer__description">
+      <span class="footer__logo">Cartoon Network Logo</span>
+      <p class="footer__text">Jogos e vídeos grátis de Ben 10, Hora da Aventura com Finn e Jake, Apenas um Show, A Turma da Mônica, O Incrível Mundo de Gumball, Steven Universo, Titio Avô, Toonix e muito mais!</p>
     </div>
-    <div>
-      <ul>
-        <li><a href="#">Guia para Pais</a></li>
-        <li><a href="#">Dicas de Segurança</a></li>
-        <li><a href="#">Programação</a></li>
-        <li><a href="#">Programação Efetivamente Veiculada</a></li>
-        <li><a href="#">Programação Efetivamente Veicula (HD)</a></li>
-        <li><a href="#">Ajuda</a></li>
+
+    <div class="footer__links">
+      <ul class="footer__link-list">
+        <li class="footer__link"><a href="#">Guia para Pais</a></li>
+        <li class="footer__link"><a href="#">Dicas de Segurança</a></li>
+        <li class="footer__link"><a href="#">Programação</a></li>
+        <li class="footer__link"><a href="#">Programação Efetivamente Veiculada</a></li>
+        <li class="footer__link"><a href="#">Programação Efetivamente Veiculada (HD)</a></li>
+        <li class="footer__link"><a href="#">Ajuda</a></li>
       </ul>
     </div>
   </footer>

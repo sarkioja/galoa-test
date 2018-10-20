@@ -290,17 +290,326 @@ ul>li {
   src: url("../fonts/whitney/whitney_light-webfont.eot");
   src: url("../fonts/whitney/whitney_light-webfont.eot?#iefix") format('embedded-opentype'), url("../fonts/whitney/whitney_light-webfont.woff2") format('woff2'), url("../fonts/whitney/whitney_light-webfont.woff") format('woff'), url("../fonts/whitney/whitney_light-webfont.ttf") format('truetype');
 }
+.flex,
+.header__upbar,
+.header__ad,
+.header__titlebar,
+.schedule,
+.schedule__row,
+.schedule__timeslot,
+.schedule__shows,
+.footer__description {
+  display: flex;
+  align-items: center;
+}
+.gridBoxes,
+.schedule__hour,
+.schedule__hour--pink,
+.schedule__hour--yellow,
+.schedule__hour--arrow {
+  display: inline-block;
+  width: 3.5em;
+  height: 3.5em;
+  margin: 0.025em;
+  margin-top: 0.18em;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.5em;
+  padding-top: 1.25em;
+  color: #fff;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: 0.2s all linear;
+}
 body {
   background-color: #fff;
   color: #000;
   font-family: 'CNLatin', sans-serif;
+  font-size: 1em;
+  height: 100%;
+  min-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul,
+li {
+  text-decoration: none;
+  list-style-type: none;
+}
+input {
+  border: none;
+  outline: 0;
+}
+.header {
+  background-color: #000;
+  color: #fff;
+}
+.header__upbar {
+  justify-content: space-between;
+  flex-flow: wrap;
+  padding: 0 15%;
+}
+.header__timebar {
+  text-align: right;
+  margin-left: 8.5em;
+}
+.header__time {
   font-size: 2em;
 }
-h1 {
+.header__program {
   text-transform: uppercase;
+  font-size: 0.6em;
+  width: 10em;
+  margin-right: 2.5em;
 }
-h2 {
+.header__program-more {
+  display: inline-block;
+  background: #ffea00;
+  color: #000;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  font-weight: bold;
+  height: 1em;
+  width: 1em;
+  position: relative;
+  top: -1em;
+}
+.header__ad {
+  justify-content: flex-end;
+}
+.header__ad-link {
+  width: 602px;
+  height: 72px;
+  border: 1px solid #4c4c4c;
+}
+.header__ad-title {
+  display: block;
+  font-size: 0.7em;
+  transform: rotate(-90deg);
+  margin-left: -2.25em;
+}
+.header__titlebar {
+  justify-content: space-between;
+  background-color: #4c4c4c;
+  padding: 0.5em 18%;
+  height: 1.8em;
+}
+.header__title {
+  background: url("../imgs/cn_logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-indent: -9999px;
+  height: 2.7em;
+  width: 4.4em;
+}
+.header__search {
   font-family: 'Whitney', sans-serif;
-  font-weight: 100;
-  font-size: 1.5em;
+  font-weight: bold;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.6em;
+  line-height: 1.4em;
+  padding: 0.6em;
+  width: 22em;
+}
+.schedule {
+  padding: 0 18.4%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+}
+.schedule__title {
+  flex-grow: 1;
+  min-width: 100%;
+  background-color: #009ade;
+  color: #fff;
+  margin-top: 0.6em;
+  border-top: 5px solid #ffea00;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+.schedule__day {
+  padding: 0.4em;
+}
+.schedule__row {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-bottom: 0.5em;
+}
+.schedule__list {
+  margin: 0;
+  padding: 0;
+  max-width: 65%;
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+.schedule__hour {
+  background-color: #009ade;
+}
+.schedule__hour:hover {
+  color: #009ade;
+  background-color: #000;
+  opacity: 1;
+  transform: scale(1.1);
+}
+.schedule__hour--pink {
+  background-color: #ec0080;
+}
+.schedule__hour--pink:hover {
+  color: #ec0080;
+  background-color: #000;
+  opacity: 1;
+  transform: scale(1.1);
+}
+.schedule__hour--yellow {
+  background-color: #ffea00;
+}
+.schedule__hour--yellow:hover {
+  color: #ffea00;
+  background-color: #000;
+  opacity: 1;
+  transform: scale(1.1);
+}
+.schedule__hour--arrow {
+  background-color: #fff;
+  padding-top: 0.8em;
+}
+.schedule__hour--arrow:hover {
+  color: #000;
+  opacity: 1;
+  transform: scale(1.1);
+}
+.schedule__byHour {
+  background-color: #ffea00;
+  color: #fff;
+  width: 31%;
+  text-align: center;
+  margin-right: 1em;
+}
+.schedule__selected-hour {
+  display: block;
+  font-size: 3.5em;
+  margin: 0.3em;
+}
+.schedule__timeslot {
+  justify-content: space-between;
+  flex-flow: no-wrap;
+  background-color: #fff;
+  color: #000;
+  margin: 0.5em;
+  height: 5em;
+  cursor: pointer;
+  transition: 0.2s all linear;
+}
+.schedule__timeslot:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+  transition: 0.2s all linear;
+}
+.schedule__quarter {
+  display: inline-block;
+  color: #4c4c4c;
+  transform: rotate(-90deg);
+  font-size: 1.8em;
+  margin-left: -0.45em;
+  margin-right: 0.45em;
+}
+.schedule__showImage {
+  max-width: 100%;
+}
+.schedule__showName {
+  font-family: 'Whitney', sans-serif;
+  font-weight: bold;
+  text-align: left;
+  margin: 0 0.45em 0 1.2em;
+}
+.schedule__byShow {
+  width: 100%;
+  height: 8em;
+  background-color: #ec0080;
+  color: #fff;
+  border-bottom: 1em solid #009ade;
+}
+.schedule__shows {
+  justify-content: space-around;
+  margin-top: -1em;
+}
+.schedule__show {
+  border: 1px solid transparent;
+}
+.schedule__show:hover {
+  transition: 0.2s all linear;
+  transform: scale(1.1);
+}
+.schedule__prev,
+.schedule__next {
+  cursor: pointer;
+  fill: #fff;
+  transition: 0.2s all linear;
+}
+.schedule__prev:hover,
+.schedule__next:hover {
+  fill: #000;
+}
+.schedule__line {
+  width: 100%;
+  height: 0.3em;
+  background-color: #ffea00;
+  z-index: -1;
+}
+.footer {
+  font-size: 0.8em;
+  width: 100%;
+  overflow: hidden;
+}
+.footer__description {
+  justify-content: space-around;
+  background-color: #4c4c4c;
+  color: #fff;
+  font-family: 'Whitney', sans-serif;
+  padding: 1.2em 18%;
+}
+.footer__logo {
+  background: url("../imgs/cn_logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-indent: -9999px;
+  height: 4em;
+  width: 8em;
+  display: block;
+  margin-right: 2em;
+}
+.footer__text {
+  color: #c6c6c6;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+}
+.footer__links {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  padding: 0.3em 18%;
+}
+.footer__link {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 1.5em;
+  display: inline;
+  padding: 3em 1.5em;
+  white-space: nowrap;
+}
+.footer__link a:hover {
+  text-decoration: underline;
 }
