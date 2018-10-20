@@ -87,9 +87,15 @@ input
     //padding: 0 12em
     padding 0 15%
 
+    +desktop-fullhd()
+      padding 0 23%
+
   &__timebar
     text-align right
     margin-left 8.5em
+
+    +desktop-fullhd()
+      margin-left 15em
 
   &__time
     font-size 2em
@@ -188,6 +194,9 @@ input
     max-width 65%
     padding-left 1.5em
     margin-bottom: 1em
+
+    +desktop-hd()
+      max-width: 52%
 
     +desktop-fullhd()
       max-width: 45%
@@ -413,6 +422,9 @@ input
     padding: 0.9em 0em 0.9em 0em
     border-radius: 0.5em
     animation: fade 1s
+
+    +desktop-fullhd()
+      width: 40vw
 
   &__close
     {whitney}

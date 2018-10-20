@@ -356,9 +356,19 @@ input {
   flex-flow: wrap;
   padding: 0 15%;
 }
+@media screen and (min-width: 1801px) {
+  .header__upbar {
+    padding: 0 23%;
+  }
+}
 .header__timebar {
   text-align: right;
   margin-left: 8.5em;
+}
+@media screen and (min-width: 1801px) {
+  .header__timebar {
+    margin-left: 15em;
+  }
 }
 .header__time {
   font-size: 2em;
@@ -455,7 +465,12 @@ input {
   padding-left: 1.5em;
   margin-bottom: 1em;
 }
-@media screen and (min-width: 1401px) {
+@media screen and (min-width: 1401px) and (max-width: 1800px) {
+  .schedule__list {
+    max-width: 52%;
+  }
+}
+@media screen and (min-width: 1801px) {
   .schedule__list {
     max-width: 45%;
   }
@@ -503,7 +518,7 @@ input {
   text-align: center;
   margin-right: 1em;
 }
-@media screen and (min-width: 1401px) {
+@media screen and (min-width: 1801px) {
   .schedule__byHour {
     max-width: 21%;
   }
@@ -679,6 +694,12 @@ input {
   padding: 0.9em 0em 0.9em 0em;
   border-radius: 0.5em;
   animation: fade 1s;
+}
+@media screen and (min-width: 1801px) {
+  .modal__show,
+  .modalDetails__show {
+    width: 40vw;
+  }
 }
 .modal__close,
 .modalDetails__close {
