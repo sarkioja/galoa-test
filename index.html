@@ -101,10 +101,16 @@
     </div>
 
     <div class="schedule__byShow">
-      <ul class="schedule__shows">
+
+      <span id="shows-1"></span>
+      <span id="shows-2"></span>
+
+      <ul class="schedule__shows shows1">
         <li>
           <i>
-            <svg class="schedule__prev" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>
+            <a href="#shows-2">
+                <svg class="schedule__prev" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>
+            </a>
           </i>
         </li>
         <li class="schedule__show">
@@ -134,7 +140,51 @@
         </li>
         <li>
           <i>
-            <svg class="schedule__next" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"/></svg>
+            <a href="#shows-2">
+              <svg class="schedule__next" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"/></svg>
+            </a>
+          </i>
+        </li>
+      </ul>
+
+      <ul class="schedule__shows shows2">
+        <li>
+          <i>
+            <a href="#shows-1">
+              <svg class="schedule__prev" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>
+            </a>
+          </i>
+        </li>
+        <li class="schedule__show">
+          <a href="#">
+            <img src="assets/imgs/rigby.png" alt="Apenas um Show">
+          </a>
+        </li>
+        <li class="schedule__show">
+          <a href="#">
+            <img src="assets/imgs/steven.png" alt="Steven Universo">
+          </a>
+        </li>
+        <li class="schedule__show">
+          <a href="#">
+          <img src="assets/imgs/jorel.png" alt="O irmão do Jorel">
+          </a>
+        </li>
+        <li class="schedule__show">
+          <a href="#">
+          <img src="assets/imgs/gumball.png" alt="Gumball">
+          </a>
+        </li>
+        <li class="schedule__show">
+          <a href="#">
+            <img src="assets/imgs/jake.png" alt="Hora da Aventura">
+          </a>
+        </li>
+        <li>
+          <i>
+            <a href="#shows-1">
+              <svg class="schedule__next" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"/></svg>
+            </a>
           </i>
         </li>
       </ul>

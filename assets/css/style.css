@@ -452,7 +452,7 @@ input {
 }
 @media screen and (min-width: 1401px) {
   .schedule__list {
-    max-width: 30%;
+    max-width: 45%;
   }
 }
 .schedule__hour {
@@ -500,7 +500,7 @@ input {
 }
 @media screen and (min-width: 1401px) {
   .schedule__byHour {
-    max-width: 18%;
+    max-width: 21%;
   }
 }
 .schedule__selected-hour {
@@ -539,6 +539,7 @@ input {
   font-weight: bold;
   text-align: left;
   margin: 0 0.45em 0 1.2em;
+  transition: 0.2s all linear;
 }
 .schedule__byShow {
   width: 100%;
@@ -546,10 +547,13 @@ input {
   background-color: #ec0080;
   color: #fff;
   border-bottom: 1em solid #009ade;
+  position: relative;
 }
 .schedule__shows {
   justify-content: space-around;
   margin-top: -1em;
+  display: none;
+  transition: 0.2s all linear;
 }
 .schedule__show {
   border: 1px solid transparent;
@@ -573,6 +577,28 @@ input {
   height: 0.3em;
   background-color: #ffea00;
   z-index: -1;
+}
+[id^="shows"] {
+  display: none;
+}
+.shows1,
+.shows2 {
+  transition: 0.5s all ease-in-out;
+}
+.shows1 {
+  display: flex;
+  z-index: 2;
+}
+*:target ~ .shows1 {
+  display: none;
+}
+#shows-1:target ~ .shows1 {
+  display: flex;
+  transition: 0.2s all linear;
+}
+#shows-2:target ~ .shows2 {
+  display: flex;
+  transition: 0.2s all linear;
 }
 .footer {
   font-size: 0.8em;

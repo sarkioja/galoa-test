@@ -186,7 +186,7 @@ input
     margin-bottom: 1em
 
     +desktop-fullhd()
-      max-width: 30%
+      max-width: 45%
 
   &__hour
     @extends .gridBoxes
@@ -233,7 +233,7 @@ input
     margin-right 1em
 
     +desktop-fullhd()
-      max-width: 18%
+      max-width: 21%
 
   &__selected-hour
     display: block
@@ -272,6 +272,7 @@ input
     font-weight: bold
     text-align: left
     margin: 0 0.45em 0 1.2em
+    {transition}
 
   &__byShow
     width: 100%
@@ -279,12 +280,15 @@ input
     background-color $pink
     color $white
     border-bottom 1em solid $blue
+    position: relative
     //margin-bottom: 1em
 
   &__shows
     @extends .flex
     justify-content: space-around
     margin-top: -1em
+    display none
+    {transition}
 
   &__show
     border: 1px solid transparent
@@ -308,6 +312,29 @@ input
     background-color: $yellow
     //margin-top: -1em
     z-index -1
+
+[id^="shows"]
+  display none
+
+.shows1,
+.shows2
+  transition: 0.5s all ease-in-out;
+
+.shows1
+  display: flex
+  z-index: 2
+
+*:target ~ .shows1
+  display: none
+
+#shows-1:target ~ .shows1
+  display: flex;
+  {transition}
+
+#shows-2:target ~ .shows2
+  display: flex
+  {transition}
+
 
 // Footer
 .footer
