@@ -450,6 +450,11 @@ input {
   padding-left: 1.5em;
   margin-bottom: 1em;
 }
+@media screen and (min-width: 1401px) {
+  .schedule__list {
+    max-width: 30%;
+  }
+}
 .schedule__hour {
   background-color: #009ade;
 }
@@ -492,6 +497,11 @@ input {
   width: 31%;
   text-align: center;
   margin-right: 1em;
+}
+@media screen and (min-width: 1401px) {
+  .schedule__byHour {
+    max-width: 18%;
+  }
 }
 .schedule__selected-hour {
   display: block;

@@ -2,6 +2,7 @@
 @require _normalize
 @import _reset
 @import _typography
+@import _media-queries
 
 // Main Colors
 $blue = #009ade
@@ -184,6 +185,9 @@ input
     padding-left 1.5em
     margin-bottom: 1em
 
+    +desktop-fullhd()
+      max-width: 30%
+
   &__hour
     @extends .gridBoxes
     background-color: $blue
@@ -227,6 +231,9 @@ input
     width: 31%
     text-align: center
     margin-right 1em
+
+    +desktop-fullhd()
+      max-width: 18%
 
   &__selected-hour
     display: block
