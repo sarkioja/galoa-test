@@ -12,12 +12,9 @@ $gray = #4c4c4c
 $grayText = #c6c6c6
 $black = #000
 $white = #fff
+$bg = rgba(32, 32, 32, 0.6)
 
-// Mixins
-.flex
-  display flex
-  align-items center
-
+// Helpers
 cn_logo =
   background url('../imgs/cn_logo.png')
   background-repeat no-repeat
@@ -34,6 +31,13 @@ transition =
 
 transform =
   transform: scale(1.1);
+
+whitney =
+  font-family 'Whitney', sans-serif
+
+.flex
+  display flex
+  align-items center
 
 .gridBoxes
   display: inline-block
@@ -138,7 +142,7 @@ input
     width 4.4em
 
   &__search
-    font-family 'Whitney', sans-serif
+    {whitney}
     font-weight: bold
     background-color $black
     color $white
@@ -268,7 +272,7 @@ input
     max-width: 100%
 
   &__showName
-    font-family: 'Whitney', sans-serif
+    {whitney}
     font-weight: bold
     text-align: left
     margin: 0 0.45em 0 1.2em
@@ -281,6 +285,7 @@ input
     color $white
     border-bottom 1em solid $blue
     position: relative
+    {transition}
     //margin-bottom: 1em
 
   &__shows
@@ -318,7 +323,7 @@ input
 
 .shows1,
 .shows2
-  transition: 0.5s all ease-in-out;
+  {transition}
 
 .shows1
   display: flex
@@ -328,12 +333,10 @@ input
   display: none
 
 #shows-1:target ~ .shows1
-  display: flex;
-  {transition}
+  display: flex
 
 #shows-2:target ~ .shows2
   display: flex
-  {transition}
 
 
 // Footer
@@ -347,7 +350,7 @@ input
     justify-content space-around
     background-color $gray
     color $white
-    font-family 'Whitney', sans-serif
+    {whitney}
     //padding 1.2em 20em
     padding 1.2em 18%
 
@@ -384,3 +387,206 @@ input
 
     & a:hover
       text-decoration underline
+
+// Modal
+.modal
+  position fixed
+  left 0
+  top 0
+  width: 100%
+  height: 100%
+  background-color: $bg
+  z-index: 3
+  overflow-x: hidden
+  display: none
+  animation: fade 1s
+
+  &__show
+    text-align: center
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background-color: $blue
+    color: $white
+    width: 55vw
+    padding: 0.9em 0em 0.9em 0em
+    border-radius: 0.5em
+    animation: fade 1s
+
+  &__close
+    {whitney}
+    font-weight 800
+    font-size 1.1em
+    position absolute
+    top 0.25em
+    right: 0.8em
+    cursor pointer
+    background-color $pink
+    padding 0.1em 0.4em
+    border 1px solid transparent
+    border-radius 5px
+
+  &__showDetails
+    @extends .flex
+    width 100%
+    padding 1em 3em
+    background-color $yellow
+    margin-top 1em
+
+  &__showImages
+    align-self flex-start
+    display inline
+    margin-right: -1.75em
+    z-index 2
+
+  &__showImage
+    background-color $white
+    border 0.6em solid $pink
+    border-radius 50%
+
+  &__showTitles
+    background-color $pink
+    text-transform uppercase
+    padding 1em 10em 1em 2em
+    text-align left
+    z-index 1
+
+  &__showTitle
+    font-size 2em
+
+  &__showTitleEn
+    {whitney}
+    font-size 1.8em
+    font-weight 700
+
+  &__showRating
+    {whitney}
+    font-weight 700
+    font-size 2em
+    display block
+    background-color $blue
+    border 3px solid $white
+    border-radius 9px
+    padding 0.3em
+    margin-left 1em
+
+  &__showSchedule
+    @extends .flex
+    justify-content center
+    {whitney}
+    font-weight 700
+    line-height 1.5em
+    color $pink
+    padding-top 1em
+    vertical-align middle
+
+  &__showHour
+    display: inline-block
+    width: 6em
+    height 6em
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1em
+    padding-top 0.75em
+    color: $white
+    {transition}
+    background-color $white
+    color $pink
+    vertical-align middle
+
+    & span
+      display block
+
+  &__showTimeSlot
+    color $yellow
+
+.show
+  display block
+  {transform}
+  {transition}
+
+//Modal 2
+.modalDetails
+  @extends .modal
+  //display: block
+
+  &__show
+    @extends .modal__show
+    text-align: center
+    background-color: $pink
+    color: $white
+    width: 38vw
+    padding: 0.9em 0em 0.9em 0em
+
+  &__close
+    @extends .modal__close
+    font-size 1em
+    position absolute
+    top 0.25em
+    right: 0.7em
+    background-color $blue
+    padding 0.1em 0.3em
+
+  &__details
+    @extends .modal__showDetails
+    padding 1em
+
+  &__images
+    @extends .modal__showImages
+    margin-right: -2em
+
+  &__image
+    @extends .modal__showImage
+    border 0.6em solid $blue
+
+  &__titles
+    @extends .modal__showTitles
+    background-color $blue
+    padding 0.5em 1.5em 0em 2.5em
+    line-height 1.5em
+
+  &__rating
+    @extends .modal__showRating
+
+  &__title
+    font-size 1.8em
+
+  &__titleEn
+    @extends .modal__showTitleEn
+    font-size 1.6em
+
+  &__episodeTitle
+    {whitney}
+    font-size: 1.3em
+    text-transform: none
+
+  &__summary
+    {whitney}
+    text-align: left
+    padding 0.5em 1.5em
+    border-bottom 0.2em solid $yellow
+
+  &__dayEpisode
+    font-size: 1.4em
+    line-height: 2em
+    font-weight: bold
+
+  &__episode
+    font-size: 1.15em
+    line-height 1.2em
+    font-weight: bold
+
+  &__info
+    font-size: 1em
+    line-height 1.3em
+
+    & span
+      font-weight: bold
+
+
+//Animations
+@keyframes fade {
+    from {opacity: 0}
+    to {opacity: 1}
+}

@@ -298,7 +298,12 @@ ul>li {
 .schedule__row,
 .schedule__timeslot,
 .schedule__shows,
-.footer__description {
+.footer__description,
+.modal__showDetails,
+.modal__showSchedule,
+.modalDetails__showDetails,
+.modalDetails__showSchedule,
+.modalDetails__details {
   display: flex;
   align-items: center;
 }
@@ -548,6 +553,7 @@ input {
   color: #fff;
   border-bottom: 1em solid #009ade;
   position: relative;
+  transition: 0.2s all linear;
 }
 .schedule__shows {
   justify-content: space-around;
@@ -583,7 +589,7 @@ input {
 }
 .shows1,
 .shows2 {
-  transition: 0.5s all ease-in-out;
+  transition: 0.2s all linear;
 }
 .shows1 {
   display: flex;
@@ -594,11 +600,9 @@ input {
 }
 #shows-1:target ~ .shows1 {
   display: flex;
-  transition: 0.2s all linear;
 }
 #shows-2:target ~ .shows2 {
   display: flex;
-  transition: 0.2s all linear;
 }
 .footer {
   font-size: 0.8em;
@@ -648,4 +652,234 @@ input {
 }
 .footer__link a:hover {
   text-decoration: underline;
+}
+.modal,
+.modalDetails {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(32,32,32,0.6);
+  z-index: 3;
+  overflow-x: hidden;
+  display: none;
+  animation: fade 1s;
+}
+.modal__show,
+.modalDetails__show {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #009ade;
+  color: #fff;
+  width: 55vw;
+  padding: 0.9em 0em 0.9em 0em;
+  border-radius: 0.5em;
+  animation: fade 1s;
+}
+.modal__close,
+.modalDetails__close {
+  font-family: 'Whitney', sans-serif;
+  font-weight: 800;
+  font-size: 1.1em;
+  position: absolute;
+  top: 0.25em;
+  right: 0.8em;
+  cursor: pointer;
+  background-color: #ec0080;
+  padding: 0.1em 0.4em;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+.modal__showDetails,
+.modalDetails__showDetails,
+.modalDetails__details {
+  width: 100%;
+  padding: 1em 3em;
+  background-color: #ffea00;
+  margin-top: 1em;
+}
+.modal__showImages,
+.modalDetails__showImages,
+.modalDetails__images {
+  align-self: flex-start;
+  display: inline;
+  margin-right: -1.75em;
+  z-index: 2;
+}
+.modal__showImage,
+.modalDetails__showImage,
+.modalDetails__image {
+  background-color: #fff;
+  border: 0.6em solid #ec0080;
+  border-radius: 50%;
+}
+.modal__showTitles,
+.modalDetails__showTitles,
+.modalDetails__titles {
+  background-color: #ec0080;
+  text-transform: uppercase;
+  padding: 1em 10em 1em 2em;
+  text-align: left;
+  z-index: 1;
+}
+.modal__showTitle,
+.modalDetails__showTitle {
+  font-size: 2em;
+}
+.modal__showTitleEn,
+.modalDetails__showTitleEn,
+.modalDetails__titleEn {
+  font-family: 'Whitney', sans-serif;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+.modal__showRating,
+.modalDetails__showRating,
+.modalDetails__rating {
+  font-family: 'Whitney', sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+  display: block;
+  background-color: #009ade;
+  border: 3px solid #fff;
+  border-radius: 9px;
+  padding: 0.3em;
+  margin-left: 1em;
+}
+.modal__showSchedule,
+.modalDetails__showSchedule {
+  justify-content: center;
+  font-family: 'Whitney', sans-serif;
+  font-weight: 700;
+  line-height: 1.5em;
+  color: #ec0080;
+  padding-top: 1em;
+  vertical-align: middle;
+}
+.modal__showHour,
+.modalDetails__showHour {
+  display: inline-block;
+  width: 6em;
+  height: 6em;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1em;
+  padding-top: 0.75em;
+  color: #fff;
+  transition: 0.2s all linear;
+  background-color: #fff;
+  color: #ec0080;
+  vertical-align: middle;
+}
+.modal__showHour span,
+.modalDetails__showHour span {
+  display: block;
+}
+.modal__showTimeSlot,
+.modalDetails__showTimeSlot {
+  color: #ffea00;
+}
+.show {
+  display: block;
+  transform: scale(1.1);
+  transition: 0.2s all linear;
+}
+.modalDetails__show {
+  text-align: center;
+  background-color: #ec0080;
+  color: #fff;
+  width: 38vw;
+  padding: 0.9em 0em 0.9em 0em;
+}
+.modalDetails__close {
+  font-size: 1em;
+  position: absolute;
+  top: 0.25em;
+  right: 0.7em;
+  background-color: #009ade;
+  padding: 0.1em 0.3em;
+}
+.modalDetails__details {
+  padding: 1em;
+}
+.modalDetails__images {
+  margin-right: -2em;
+}
+.modalDetails__image {
+  border: 0.6em solid #009ade;
+}
+.modalDetails__titles {
+  background-color: #009ade;
+  padding: 0.5em 1.5em 0em 2.5em;
+  line-height: 1.5em;
+}
+.modalDetails__title {
+  font-size: 1.8em;
+}
+.modalDetails__titleEn {
+  font-size: 1.6em;
+}
+.modalDetails__episodeTitle {
+  font-family: 'Whitney', sans-serif;
+  font-size: 1.3em;
+  text-transform: none;
+}
+.modalDetails__summary {
+  font-family: 'Whitney', sans-serif;
+  text-align: left;
+  padding: 0.5em 1.5em;
+  border-bottom: 0.2em solid #ffea00;
+}
+.modalDetails__dayEpisode {
+  font-size: 1.4em;
+  line-height: 2em;
+  font-weight: bold;
+}
+.modalDetails__episode {
+  font-size: 1.15em;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+.modalDetails__info {
+  font-size: 1em;
+  line-height: 1.3em;
+}
+.modalDetails__info span {
+  font-weight: bold;
+}
+@-moz-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
