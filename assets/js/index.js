@@ -1,48 +1,36 @@
-//Variables
-const modal = document.querySelector(".modal");
-const trigger = document.querySelectorAll(".expand");
-const close = document.querySelector(".modal__close");
+const div = document.querySelector('.schedule__byHour');
+const title = document.querySelector('.schedule__selected-hour');
+const hours = document.querySelectorAll('.schedule__hour');
+const setHour = document.querySelectorAll('.schedule__period');
+const currentHour = new Date().getHours();
 
-const modal2 = document.querySelector('.modalDetails')
-const trigger2 = document.querySelectorAll(".more");
-const close2 = document.querySelector(".modalDetails__close");
+highlightCurrentHour();
 
+function highlightCurrentHour() {
+  for (let i = 0; i < hours.length; i++) {
+    let stringHour = hours[i].innerHTML[0] += hours[i].innerHTML[1];
+    let color = window.getComputedStyle(hours[i]).getPropertyValue('background-color');
 
-//Calls
-function callModal(element) {
-  element.classList.toggle("show");
-}
-
-function windowOnClick(event) {
-    if (event.target === modal) {
-        callModal(modal);
+    if (stringHour == currentHour) {
+        hours[i].classList.add("currentHour");
+        hours[i].style.color = color;
+        getHourSchedule(hours[i], stringHour, color);
     }
-    if (event.target === modal2) {
-        callModal(modal2);
-    }
+  selectedHourSchedule(hours[i], stringHour, color);
+  }
 }
 
-
-for (var i = 0; i < trigger.length; i++) {
-  trigger[i].addEventListener("click", function(event) {
-    event.preventDefault();
-    callModal(modal);
-  });
+function selectedHourSchedule(hour, stringHour, color) {
+  hour.addEventListener("click", function() {
+    getHourSchedule(hour, stringHour, color)
+  })
 }
 
-for (var i = 0; i < trigger2.length; i++) {
-  trigger2[i].addEventListener("click", function(event) {
-    event.preventDefault();
-    callModal(modal2);
-  });
+function getHourSchedule(hour, stringHour, color) {
+  div.style.backgroundColor = color;
+  title.innerHTML = stringHour + 'h';
+
+  for (var x = 0; x < setHour.length; x++) {
+    setHour[x].innerHTML = stringHour;
+  }
 }
-
-close.addEventListener("click", function() {
-  callModal(modal);
-});
-
-close2.addEventListener("click", function() {
-  callModal(modal2);
-});
-
-window.addEventListener("click", windowOnClick);

@@ -619,6 +619,10 @@ input {
 #shows-2:target ~ .shows2 {
   display: flex;
 }
+.currentHour {
+  background-color: #000;
+  opacity: 1;
+}
 .footer {
   font-size: 0.8em;
   width: 100%;
